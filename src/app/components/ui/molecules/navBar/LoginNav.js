@@ -3,7 +3,7 @@ import {H2} from '../../atoms/typography/Typography'
 import Divider from '../../atoms/divider/Divider'
 import globe from '../../../assets/globe.gif'
 
-export const Navbar = () => {
+const LoginNav = () => {
   return (
     <div>
       <div style={{display:"flex",width:"300px",margin:"0 auto", paddingTop:"5px",}}>
@@ -15,3 +15,4 @@ export const Navbar = () => {
     </div>
   )
 }
+export default LoginNav

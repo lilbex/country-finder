@@ -1,0 +1,27 @@
+
+.col-sm-4 {
+  background:#242424;
+  height: 100vh;
+}
+.login{
+  width:40%;
+  margin:0 auto;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: "translate(-50%, -50%)"
+}
+.image{
+  width:50px; 
+  margin-left:50px; 
+  align-self:center;
+}
+
+@media screen and (max-width: 768px) {
+  .col-sm-4 {
+    display: none;
+  }
+  .login{
+    left: 20%;
+  }
+}

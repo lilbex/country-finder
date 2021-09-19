@@ -2,7 +2,7 @@ import React from 'react'
 
 const Paragraph = ({color,fontSize,fontWeight, fontFamily, children}) => {
   return (
-    <p style={{color,fontSize,fontWeight:"normal", fontFamily}}>{children}</p>
+    <p style={{color,fontSize,fontWeight, fontFamily}}>{children}</p>
   )
 }
 
