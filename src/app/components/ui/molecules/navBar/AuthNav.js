@@ -5,17 +5,18 @@ import globe from '../../../assets/globe.gif'
 import Button from '../../atoms/buttons/Button'
 import AuthContext from "../../../../api/context";
 import LoginTemplate from '../../../templates/loginTemplate/LoginTemplate'
+import {useHistory} from "react-router-dom"
  
 
 
 const AuthNav = () => {
   const authContext = useContext(AuthContext);
   // const {user, setUser} = useContext(AuthContext);
-
+ const history = useHistory();
 
   const handleLogout = () => {
     authContext.setUser("");
-    window.location.href = LoginTemplate;
+   history.push("/");
   }
 
 

@@ -6,6 +6,7 @@ import request,{headers} from "../../../../../api/request";
 import AuthContext from "../../../../../api/context";
 import './style.css'
 import globe from "../../../../assets/globe.gif"
+import {useHistory} from "react-router-dom";
 
 export const LoginCard = () => {
 
@@ -15,6 +16,7 @@ export const LoginCard = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
+  const history = useHistory();
 const handleChange = (event) => {
   setEmail(event.target.value);
 };
@@ -32,6 +34,7 @@ const handleChange = (event) => {
       });
       const token = response.data;
       authContext.setUser(token);
+      history.push("/home");
     } catch (error) {
       setLogin("Login");
       setError(true);
