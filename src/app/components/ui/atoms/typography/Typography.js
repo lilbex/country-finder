@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Paragraph = ({color,fontSize,fontWeight, fontFamily, children}) => {
+const Paragraph = ({color,fontSize,fontWeight, fontFamily, children, textAlign}) => {
   return (
     <p style={{color,fontSize,fontWeight, fontFamily}}>{children}</p>
   )
@@ -20,13 +20,13 @@ const H1 = ({color,fontSize,fontWeight, fontFamily, children}) => {
 
 const H2 = ({color,fontSize,fontWeight, fontFamily, children}) => {
   return (
-    <h2 style={{color,fontSize,fontWeight, fontFamily}}>{children}</h2>
+    <h2 style={{color,fontSize,fontWeight, fontFamily, textAlign:"center"}}>{children}</h2>
   )
 }
 
-const H3 = ({color,fontSize,fontWeight, fontFamily, children}) => {
+const H3 = ({color,fontSize,fontWeight, fontFamily, children, textAlign,}) => {
   return (
-    <h3 style={{color,fontSize,fontWeight, fontFamily}}>{children}</h3>
+    <h3 style={{color,fontSize,fontWeight, fontFamily, textAlign}}>{children}</h3>
   )
 }
 

@@ -1,12 +1,54 @@
 .card-shadow{
+  background-color: #e2e2e2ad;
   box-shadow: -5px 6px 23px -9px rgba(0,0,0,0.94);
 -webkit-box-shadow: -5px 6px 23px -9px rgba(0,0,0,0.94);
 -moz-box-shadow: -5px 6px 23px -9px rgba(0,0,0,0.94);
 }
 
 .card-section{
+  
   width:100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.not-found{
+  position:relative;
+  top:100px;
+  left:400px; 
+  align-items:center; 
+  align-self:center;
+}
+
+
+@media screen and (max-width: 768px){
+  .not-found{
+    left:200px; 
+  }
+  
+}
+@media screen and (max-width: 540px){
+  .not-found{
+    left:100px; 
+  }
+  
+}
+@media screen and (max-width: 411px){
+  .not-found{
+    left:50px; 
+  }
+  
+}
+@media screen and (max-width: 360px){
+  .not-found{
+    left:25px;
+  }
+  
+}
+@media screen and (max-width: 280px){
+  .not-found{
+    left:12px; 
+  }
+  
 }

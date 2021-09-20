@@ -1,10 +1,24 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {H2} from '../../atoms/typography/Typography'
 import Divider from '../../atoms/divider/Divider'
 import globe from '../../../assets/globe.gif'
 import Button from '../../atoms/buttons/Button'
+import AuthContext from "../../../../api/context";
+import LoginTemplate from '../../../templates/loginTemplate/LoginTemplate'
+ 
+
 
 const AuthNav = () => {
+  const authContext = useContext(AuthContext);
+  // const {user, setUser} = useContext(AuthContext);
+
+
+  const handleLogout = () => {
+    authContext.setUser("");
+    window.location.href = LoginTemplate;
+  }
+
+
   return (
     <>
     <div style={{display:"flex"}}>
@@ -13,7 +27,7 @@ const AuthNav = () => {
         <H2 children="Country Lookup"  />
       </div>
       <div style={{marginTop:"10px"}}>
-      <Button title="Logout" height="50px"/>
+      <Button onClick={handleLogout} title="Logout" height="50px"/>
       </div>
       
       </div>

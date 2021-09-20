@@ -5,6 +5,7 @@ import Button from "../../../atoms/buttons/Button";
 import request,{headers} from "../../../../../api/request";
 import AuthContext from "../../../../../api/context";
 import './style.css'
+import globe from "../../../../assets/globe.gif"
 
 export const LoginCard = () => {
 
@@ -32,11 +33,18 @@ const handleChange = (event) => {
   };
 
   return (
-    <div class="card card-shadow" style={{width: "25rem"}}>
+    <div class="card  card-custom" >
+      <div style={{display:"flex", flexDirection:"row",justifyContent:"center",padding:"10px" }}>
+        <img class="card-img-top" src={globe} alt="world" style={{width:"60px"}} />
+        <div style={{position:"relative", top:"15px"}}>
+        <H3 children="Search Country" color="grey" />
+      </div>
+      
+      </div>
+      
       <div class="card-body">
-        <div class="card-title"><H3 children="Login"/></div>
-        <div style={{paddingBottom:"1rem"}}><Input name="email" value={email} onChange={handleChange} label="Email Address"/></div>
-        <Button title={login} onClick={handleSubmit} width="100%" />
+        <div style={{paddingBottom:"1rem"}}><Input name="email" value={email} onChange={handleChange} label="Email Address" labelColor="grey" /></div>
+        <Button title={login} onClick={handleSubmit} width="100%"  />
       </div>
     </div>
   );
