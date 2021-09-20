@@ -5,7 +5,7 @@ export default function Input({label,placeholder, type, value,onChange,onKeyUp,l
   return (
     <div className="form-group">
       <label className="control-label" style={{color:labelColor}}>{label}</label>
-      <input className="form-control" onKeyUp={onKeyUp} onChange={onChange} type={type} placeholder={placeholder} value={value} readOnly={readOnly}/>
+      <input className="form-control" style={{borderRadius:"50px", backgroundColor:"#f5f7fa"}} onKeyUp={onKeyUp} onChange={onChange} type={type} placeholder={placeholder} value={value} readOnly={readOnly}/>
     </div>
   )
 }

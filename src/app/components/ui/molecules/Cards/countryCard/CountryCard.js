@@ -43,7 +43,7 @@ const handleSearchleChange = (e) => {
  const handleSubmit = async () => {
   setLoading("Searching...");
     try {
-      const response = await request.get(`/all`,);
+      const response = await request.get(`https://restcountries.eu/rest/v2/all`,);
       setCountryDetails(response.data);
       setLoading("Search");
     } catch (error) {

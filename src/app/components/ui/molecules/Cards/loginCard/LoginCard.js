@@ -22,7 +22,7 @@ const handleChange = (event) => {
     e.preventDefault();
     setLogin("loading...");
     try {
-      const response = await request.post("/auth/login", {
+      const response = await request.post("https://country-lookup-server.herokuapp.com/api/v1/auth/login", {
         "email": email,
       });
       const token = response.data;

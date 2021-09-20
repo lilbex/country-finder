@@ -11,8 +11,8 @@ function App() {
     <AuthContext.Provider value={{ user, setUser }}>
       <BrowserRouter>
         <Switch>
-          {/* {user?(< HomeTemplate />):(<LoginTemplate />)} */}
-          <HomeTemplate />
+          {user?(< HomeTemplate />):(<LoginTemplate />)}
+          
         </Switch>
       </BrowserRouter>
     </AuthContext.Provider>
