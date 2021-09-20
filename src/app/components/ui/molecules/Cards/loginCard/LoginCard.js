@@ -1,5 +1,5 @@
 import React,{useState, useContext} from "react";
-import {H3} from "../../../atoms/typography/Typography";
+import {H3, Paragraph} from "../../../atoms/typography/Typography";
 import Input from "../../../atoms/input/Input";
 import Button from "../../../atoms/buttons/Button";
 import request,{headers} from "../../../../../api/request";
@@ -13,6 +13,7 @@ export const LoginCard = () => {
   const [email, setEmail] = useState('');
   const [login, setLogin] = useState("Login")
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
 const handleChange = (event) => {
   setEmail(event.target.value);
@@ -21,6 +22,10 @@ const handleChange = (event) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLogin("loading...");
+    if(email==""){
+      setError(true);
+      return;
+    }
     try {
       const response = await request.post("https://country-lookup-server.herokuapp.com/api/v1/auth/login", {
         "email": email,
@@ -29,6 +34,7 @@ const handleChange = (event) => {
       authContext.setUser(token);
     } catch (error) {
       setLogin("Login");
+      setError(true);
     }
   };
 
@@ -44,6 +50,7 @@ const handleChange = (event) => {
       
       <div class="card-body">
         <div style={{paddingBottom:"1rem"}}><Input name="email" value={email} onChange={handleChange} label="Email Address" labelColor="grey" /></div>
+        {error ? <Paragraph color="red" children ="Please enter a valid password" />:null}
         <Button title={login} onClick={handleSubmit} width="100%"  />
       </div>
     </div>
