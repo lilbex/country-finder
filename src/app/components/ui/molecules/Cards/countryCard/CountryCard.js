@@ -54,7 +54,6 @@ const CountryCard = () => {
       setCountryDetails([]);
     }
   };
-  console.log("the countruies", countryDetails);
   return (
     <div className="container">
       <Input
