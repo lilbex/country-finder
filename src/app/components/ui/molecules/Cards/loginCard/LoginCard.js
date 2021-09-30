@@ -73,9 +73,11 @@ const handleChange = (event) => {
       </div>
       
       <div class="card-body">
+        <form onSubmit={handleSubmit}>
         <div style={{paddingBottom:"1rem"}}><Input name="email" value={email} onChange={handleChange} label="Email Address" labelColor="grey" /></div>
         {error ? <Paragraph color="red" children ={error} />:null}
         <Button title={login} onClick={handleSubmit} width="100%"  />
+        </form>
       </div>
     </div>
   );
