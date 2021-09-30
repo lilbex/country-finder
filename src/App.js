@@ -5,6 +5,8 @@ import LoginTemplate from "./app/components/templates/loginTemplate/LoginTemplat
 import HomeTemplate from "./app/components/templates/homeTemplate/HomeTemplate";
 import { BrowserRouter, Switch, Route,} from "react-router-dom";
 
+
+
 function App() {
   const [user, setUser] = useState();
   return (

@@ -4,6 +4,7 @@ import {H2} from "../../ui/atoms/typography/Typography"
 
 import { LoginCard } from "../../ui/molecules/Cards/loginCard/LoginCard";
 
+
 const LoginTemplate = () => {
   return (
     <div className="jumbotron jumbo-custom">

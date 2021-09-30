@@ -27,7 +27,7 @@ const AuthNav = () => {
         <img src={globe} style={{width:"50px",margin:"0 auto", position:'relative'}} />;
         <H2 children="Country Lookup"  />
       </div>
-      <div style={{marginTop:"10px"}}>
+      <div style={{marginTop:"10px", paddingLeft:"10px"}}>
       <Button onClick={handleLogout} title="Logout" height="50px"/>
       </div>
       
