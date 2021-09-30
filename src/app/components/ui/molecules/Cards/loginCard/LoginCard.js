@@ -8,24 +8,45 @@ import './style.css'
 import globe from "../../../../assets/globe.gif"
 import {useHistory} from "react-router-dom";
 
+
+const validate = values => {
+  const errors = {};
+  if (!values.email) {
+    errors.email = 'Required';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email address';
+  }
+
+  return errors;
+};
+
+
 export const LoginCard = () => {
 
   const authContext = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [login, setLogin] = useState("Login")
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState('');
 
   const history = useHistory();
 const handleChange = (event) => {
   setEmail(event.target.value);
 };
 
+
   const handleSubmit = async (e) => {
+    const errors = {};
     e.preventDefault();
     setLogin("loading...");
     if(email==""){
-      setError(true);
+      setError('Email can\'t be empty');
+      setLogin("Login");
+      return;
+    }
+    else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)){
+      setError('Invalid email address');
+      setLogin("Login");
       return;
     }
     try {
@@ -53,9 +74,11 @@ const handleChange = (event) => {
       
       <div class="card-body">
         <div style={{paddingBottom:"1rem"}}><Input name="email" value={email} onChange={handleChange} label="Email Address" labelColor="grey" /></div>
-        {error ? <Paragraph color="red" children ="Please enter a valid password" />:null}
+        {error ? <Paragraph color="red" children ={error} />:null}
         <Button title={login} onClick={handleSubmit} width="100%"  />
       </div>
     </div>
   );
 };
+
+

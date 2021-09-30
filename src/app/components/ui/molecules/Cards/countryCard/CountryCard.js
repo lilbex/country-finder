@@ -93,7 +93,9 @@ const CountryCard = () => {
                      {l}
                   </Paragraph>
                 ))}
+               
                 <div>
+                <Divider />
                   <Paragraph>
                     <span style={{ fontWeight: "bold" }}>Currency:</span>{" "}
                     {c.currency}
